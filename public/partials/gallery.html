@@ -1,0 +1,21 @@
+<!-- injected view for gallery -->
+<section class="row">
+
+	<ul class="button-group even-7">
+		<li ng-repeat="genre in gc.genres" style="display: inline-block" class="form-group">
+			<!-- <button class="button" type="radio" data-ng-value="{{genre}}" data-ng-model="gc.selectedGenres">{{ genre }}</button> -->
+			<input type="radio" value="{{genre}}" ng-model="gc.selectedGenres" id="{{genre}}"><label for="{{genre}}">{{genre}}</label>
+		</li>
+	</ul>
+
+	<div class="row">
+		<ul class="medium-block-grid-5">
+			<li ng-repeat="movie in gc.movieData | filter: { genre: gc.selectedGenres }">
+				<a href="#/details/{{movie.rank}}">
+					<img src="./data/images/{{ movie.imdbID }}.jpg">
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</section>

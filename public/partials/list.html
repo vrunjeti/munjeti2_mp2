@@ -1,0 +1,45 @@
+<!-- injected view for list -->
+<section class="row">
+
+	<form>
+		<label>Search</label>
+		<input type="text" class="form-control" ng-model="lc.formData.query">
+		<label>Sort By</label>
+		<input type="radio" value="title" ng-model="lc.formData.sortType" id="sortByTitle"><label for="sortByTitle">Title</label>
+		<input type="radio" value="rank" ng-model="lc.formData.sortType" id="sortByRank"><label for="sortByRank">Rank</label>
+		<label>Order</label>
+		<!-- value is null for ascending order value since any valid value is true -->
+		<input type="radio" value="" ng-model="lc.formData.reverse" id="orderByAsc"><label for="orderByAsc">Ascending</label>
+		<input type="radio" value="true" ng-model="lc.formData.reverse" id="orderByDes"><label for="orderByDes">Descending</label>
+		<!-- dropdown or checkboxes with sortType -->
+
+		<!-- <label>Sort By
+        <select>
+          <option value="title" ng-model="lc.formData.sortType">Title</option>
+          <option value="rank" ng-model="lc.formData.sortType">Rank</option>
+        </select> -->
+	</form>
+
+	<div class="row">
+		<!-- <ul class="medium-block-grid-5">
+			<li ng-repeat="movie in lc.movieData | filter: { title: lc.formData.query } | orderBy: lc.formData.sortType : lc.formData.reverse">
+				<img src="./data/images/{{ movie.imdbID }}.jpg">
+			</li>
+		</ul> -->
+			<div ng-repeat="movie in lc.movieData | filter: { title: lc.formData.query } | orderBy: lc.formData.sortType : lc.formData.reverse" class="panel animate-repeat">
+				<a href="#/details/{{movie.rank}}">
+					<div class="row">
+						<div class="columns large-2">
+							<img src="./data/images/{{ movie.imdbID }}.jpg">
+						</div>
+						<div class="columns large-9">
+							<h3>{{movie.title}}</h3>
+							<h4>Rank: {{movie.rank}}</h4>
+						</div>
+					</div>
+				</a>
+			</div>
+	</div>
+
+</section>
+

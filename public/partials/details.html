@@ -1,0 +1,43 @@
+<!-- injected view for details -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+
+<section class="row">
+	<div class="panel">
+		<!-- <h2>DETAILS SWAG</h2> -->
+		<div class="row" style="padding:10px 0">
+			<a href="#/details/{{dc.prev}}">
+				<div class="columns large-2">
+					<i class="fa fa-arrow-left fa-2x"></i>
+				</div>
+			</a>
+			<div class="columns large-8"></div>
+			<a href="#/details/{{dc.next}}" style="float:right">
+				<div class="columns large-2">
+					<i class="fa fa-arrow-right fa-2x" ></i>
+				</div>			
+			</a>
+		</div>
+		<div class="row">
+			<div class="columns large-4">
+				<img src="./data/images/{{ dc.current.imdbID }}.jpg">
+			</div>
+			<div class="columns large-8">
+				<h3 style="text-align:center">{{dc.current.title}}</h3>
+				<div class="row">
+					<div class="columns large-4">
+						<h4>Rank: {{dc.current.rank}}</h4>	
+					</div>
+					<div class="columns large-4">
+						<h4>IMDB Rating: {{dc.current.imdbRating}}</h4>	
+					</div>
+					<div class="columns large-4">
+						<h4>Metascore: {{dc.current.metascore}}</h4>	
+					</div>					
+				</div>
+				<h4>Plot: {{dc.current.plot}}</h4>
+				<h4>Awards: {{dc.current.awards}}</h4>
+
+			</div>
+		</div>
+	</div>
+</section>
